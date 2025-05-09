@@ -1,3 +1,4 @@
+let soma = 0;
 function adicionar() {
     let produto = document.getElementById('produto').value;
     let nome_produto = produto.split('-')[0];
@@ -8,12 +9,11 @@ function adicionar() {
     
     let preco_total_produto = parseInt(preco) * parseInt(quantidade.value);
 
-    let initialValue = 0;
-    let soma = preço_produtos.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue); 
+    soma += preco_total_produto;
 
-    carrinho.innerText += `${quantidade.value}x ${nome_produto} R$${preco}\n`;
-    
-    console.log(soma);
+    carrinho.innerHTML = `${quantidade.value}x ${nome_produto} R$${preco}\n`;
+    preco_carrinho.textContent = `R$${soma}`;
+
 }
 function limpar() {
     
